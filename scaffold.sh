@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# LLM Wiki Starter Kit — scaffold.sh
+# LLM Wiki Starter Kit - Second Brain — scaffold.sh
 # 一鍵初始化符合 Karpathy 規範的 Obsidian LLM Wiki 知識庫
 # 用法：bash scaffold.sh [目標目錄]
 # ============================================================================
@@ -21,7 +21,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${1:-.}"
 TARGET_DIR="$(cd "$TARGET_DIR" 2>/dev/null && pwd || mkdir -p "$TARGET_DIR" && cd "$TARGET_DIR" && pwd)"
 
-echo -e "${CYAN}🧠 LLM Wiki Starter Kit — 初始化中...${NC}"
+echo -e "${CYAN}🧠 LLM Wiki Starter Kit - Second Brain — 初始化中...${NC}"
 echo -e "   目標目錄：${YELLOW}${TARGET_DIR}${NC}"
 echo ""
 
@@ -52,7 +52,11 @@ directories=(
     ".claude/skills/ingest"
     ".claude/skills/lint"
     ".claude/skills/query"
+    ".claude/skills/scaffold"
     ".agents/skills/scaffold"
+    ".agents/skills/ingest"
+    ".agents/skills/lint"
+    ".agents/skills/query"
 )
 
 for dir in "${directories[@]}"; do
@@ -71,7 +75,11 @@ template_files=(
     ".claude/skills/ingest/skill.md"
     ".claude/skills/lint/skill.md"
     ".claude/skills/query/skill.md"
+    ".claude/skills/scaffold/skill.md"
     ".agents/skills/scaffold/SKILL.md"
+    ".agents/skills/ingest/SKILL.md"
+    ".agents/skills/lint/SKILL.md"
+    ".agents/skills/query/SKILL.md"
     "wiki/index.md"
     "wiki/log.md"
 )
