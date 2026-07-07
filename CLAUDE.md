@@ -8,3 +8,4 @@
    - `/ingest` -> 調用 `.claude/skills/ingest/skill`
    - `/query` -> 調用 `.claude/skills/query/skill`
    - `/lint` -> 調用 `.claude/skills/lint/skill`
+   - `/scaffold` -> 調用 `.claude/skills/scaffold/skill`
