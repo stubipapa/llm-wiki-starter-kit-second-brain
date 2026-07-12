@@ -21,12 +21,16 @@ user-invocable: true
 - **`.md` 檔案**：使用讀取工具完整讀取內容。
 - **`.pdf` 檔案**：嘗試提取文本。若無法提取或內容為空，則改為在 sources 頁面中僅記錄檔案元資訊（檔名、頁數）。
 
-### 步驟 2：提煉核心並翻譯
+### 步驟 2：提煉核心、翻譯與全局防呆檢索
 從源檔案中提取出：
 - **核心主旨**：這段資料的核心在講什麼（1-2 句話精確總結）。
 - **實體 (Entities)**：人物、公司、工具、產品等具體名詞。
 - **概念 (Concepts)**：框架、方法論、理論等抽象名詞。
 - *若原始素材為英文或其他非繁體中文內容，在此步驟必須自動翻譯並提煉為台灣繁體中文。*
+
+**⚠️ 防呆與正規化比對 (Pre-Ingest Normalization)**
+在準備建立雙向連結或新頁面前，**必須先檢索 `wiki/index.md`**：
+- 如果原文使用縮寫（如 `sdd`, `skills`）或大小寫不同的詞彙（如 `openspec`），但知識庫中已存在對應的正式全名或正確大小寫名稱（如 `spec-driven-development`, `skill-architecture`, `OpenSpec`），必須強制對齊現有全名或大小寫，**絕對禁止直接建立未同步的死鏈或重複實體**。
 
 ### 步驟 3：創建來源摘要 (Source Page)
 在 `wiki/sources/` 下建立 Markdown 檔案，檔名嚴格使用 kebab-case（例如：`摘要-{檔案slug}.md`）。
@@ -96,4 +100,4 @@ last_updated: YYYY-MM-DD
 - 絕對不讀取 `raw/09-archive/` 下的任何檔案
 - 所有 wiki 頁面必須包含 `## 關聯連接` 區域，不能產生孤島頁面
 - 使用繁體中文編寫所有內容
-- 實體命名使用 TitleCase，概念和來源使用 kebab-case
+- **強制大小寫與命名法**：實體 (Entities) 一律嚴格使用 PascalCase / TitleCase（例如 `OpenSpec`）；概念 (Concepts) 與來源 (Sources) 一律嚴格使用 kebab-case 全小寫（例如 `spec-driven-development`）。如遇命名衝突，一律以 `wiki/index.md` 內已註冊的名稱與大小寫為準。

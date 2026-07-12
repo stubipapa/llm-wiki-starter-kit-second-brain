@@ -1,6 +1,7 @@
-# 🧠 LLM Wiki Starter Kit - Second Brain (v2.1)
+# 🧠 LLM Wiki Starter Kit - Second Brain (v2.2)
 
-> **最新版本**: v2.1 (第二大腦升級版 — 支援雙平台互動與極簡一鍵安裝)
+> **最新版本**: v2.2 (第二大腦升級版 — 導入防呆與正規化檢索)
+> **v2.2 更新**: 升級 `/ingest` 技能，加入嚴格的防呆與正規化比對機制，攝取時自動對齊現有實體與概念，徹底解決大小寫與縮寫不一致產生的死鏈問題。
 > **v2.1 更新**: 升級 `/scaffold` 安裝精靈，支援一鍵無痛部署（免互動確認），並補齊 Claude Code 路由與結構圖。
 >
 > 一鍵初始化符合 [Karpathy LLM Wiki 規範](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 的 Obsidian 知識庫，內建 AI Agent 自動化工作流（Claude Code / Antigravity / 通用 Agent）。
