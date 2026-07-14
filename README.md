@@ -1,6 +1,7 @@
-# 🧠 LLM Wiki Starter Kit - Second Brain (v2.4)
+# 🧠 LLM Wiki Starter Kit - Second Brain (v2.4.1)
 
-> **最新版本**: v2.4 (自動升級版 — 新增 `/version` 版本檢查與架構升級技能)
+> **最新版本**: v2.4.1 (自動升級版 — 新增 `/version` 技能與安裝腳本 Bug 修復)
+> **v2.4.1 更新**: 修復 `scaffold.sh` 安裝精靈在目標目錄已存在時會崩潰的 Bug。
 > **v2.4 更新**: 新增 `/version` 技能，支援一鍵版本檢查與架構自動升級；新增 `VERSION` 版本標記檔與 `CHANGELOG.md` 獨立變更日誌。詳見 [CHANGELOG.md](CHANGELOG.md)。
 > **v2.3 更新**: 雙軌架構對齊、Python 腳本收納至 `scripts/`、全域雙鏈格式優化。
 >
