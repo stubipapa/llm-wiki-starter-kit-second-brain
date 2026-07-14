@@ -1,9 +1,8 @@
-# 🧠 LLM Wiki Starter Kit - Second Brain (v2.3)
+# 🧠 LLM Wiki Starter Kit - Second Brain (v2.4)
 
-> **最新版本**: v2.3 (雙軌相容升級版 — 同步技能與清理架構)
-> **v2.3 更新**: 雙軌架構對齊：同步了 Claude Code 與 Antigravity 的 Skills，清除根目錄散落的 Python 腳本並收納至 `scripts/` 中，全面優化索引與範本格式為嚴格的雙鏈 (`[[ ]]`) 格式。
-> **v2.2 更新**: 升級 `/ingest` 技能，加入嚴格的防呆與正規化比對機制，攝取時自動對齊現有實體與概念，徹底解決大小寫與縮寫不一致產生的死鏈問題。
-> **v2.1 更新**: 升級 `/scaffold` 安裝精靈，支援一鍵無痛部署（免互動確認），並補齊 Claude Code 路由與結構圖。
+> **最新版本**: v2.4 (自動升級版 — 新增 `/version` 版本檢查與架構升級技能)
+> **v2.4 更新**: 新增 `/version` 技能，支援一鍵版本檢查與架構自動升級；新增 `VERSION` 版本標記檔與 `CHANGELOG.md` 獨立變更日誌。詳見 [CHANGELOG.md](CHANGELOG.md)。
+> **v2.3 更新**: 雙軌架構對齊、Python 腳本收納至 `scripts/`、全域雙鏈格式優化。
 >
 > 一鍵初始化符合 [Karpathy LLM Wiki 規範](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 的 Obsidian 知識庫，內建 AI Agent 自動化工作流（Claude Code / Antigravity / 通用 Agent）。
 
@@ -15,8 +14,9 @@
 
 - 📁 **完整的目錄架構**：raw（原始素材）/ wiki（知識編譯）/ assets（媒體資產）
 - 📜 **AI Agent 規則檔案**：讓任何 AI Agent 理解你的知識庫結構與操作規範
-- 🛠️ **三大核心 Skills**：ingest（攝取）/ query（查詢）/ lint（巡檢）
+- 🛠️ **四大核心 Skills**：ingest（攝取）/ query（查詢）/ lint（巡檢）/ version（版本升級）
 - 🔗 **雙鏈知識網絡**：自動維護 Obsidian 雙向連結，杜絕孤島頁面
+- 🔄 **自動升級機制**：`/version` 一鍵檢查更新，安全升級架構而不影響資料
 
 ### 設計哲學
 
@@ -104,6 +104,9 @@ CLAUDE.md ─────┐
 
 ```
 My-Vault/                          ← Vault 根目錄
+├── VERSION                        ← 版本標記（程式判斷用）
+├── CHANGELOG.md                   ← 版本變更日誌
+├── README.md                      ← 專案說明文件
 ├── CLAUDE.md                      ← Claude Code 入口（自動讀取）
 ├── .agyrules                      ← Antigravity 入口（自動讀取）
 ├── WIKI_SCHEMA.md                 ← 核心規範（被上面兩個引用）
@@ -115,7 +118,8 @@ My-Vault/                          ← Vault 根目錄
 │   │   ├── skill.md
 │   │   └── scripts/
 │   ├── query/skill.md
-│   └── scaffold/skill.md
+│   ├── scaffold/skill.md
+│   └── version/skill.md
 ├── .agents/skills/                ← Antigravity 的 Skills
 │   ├── ingest/
 │   │   ├── SKILL.md
@@ -124,7 +128,8 @@ My-Vault/                          ← Vault 根目錄
 │   │   ├── SKILL.md
 │   │   └── scripts/
 │   ├── query/SKILL.md
-│   └── scaffold/SKILL.md
+│   ├── scaffold/SKILL.md
+│   └── version/SKILL.md
 ├── raw/                           ← 原始素材收件箱（唯讀）
 │   ├── 01-articles/
 │   ├── 02-papers/
@@ -150,6 +155,7 @@ My-Vault/                          ← Vault 根目錄
 | `/ingest` | 將 raw/ 原始素材編譯為 wiki/ 知識頁面 | `/ingest` 或 `/ingest <路徑>` |
 | `/query` | 在本地知識庫中精準檢索並回答 | `/query <問題>` |
 | `/lint` | 知識庫健康度全面巡檢 | `/lint` |
+| `/version` | 版本檢查與架構自動升級 | `/version` |
 
 ### Ingest 工作流
 ```mermaid

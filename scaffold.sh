@@ -55,12 +55,14 @@ directories=(
     ".claude/skills/lint/scripts"
     ".claude/skills/query"
     ".claude/skills/scaffold"
+    ".claude/skills/version"
     ".agents/skills/scaffold"
     ".agents/skills/ingest"
     ".agents/skills/ingest/scripts"
     ".agents/skills/lint"
     ".agents/skills/lint/scripts"
     ".agents/skills/query"
+    ".agents/skills/version"
 )
 
 for dir in "${directories[@]}"; do
@@ -80,6 +82,7 @@ template_files=(
     ".claude/skills/lint/skill.md"
     ".claude/skills/query/skill.md"
     ".claude/skills/scaffold/skill.md"
+    ".claude/skills/version/skill.md"
     ".claude/skills/ingest/scripts/ingest_script.py"
     ".claude/skills/ingest/scripts/ingest_skills_dir.py"
     ".claude/skills/lint/scripts/fix_links.py"
@@ -88,10 +91,13 @@ template_files=(
     ".agents/skills/ingest/SKILL.md"
     ".agents/skills/lint/SKILL.md"
     ".agents/skills/query/SKILL.md"
+    ".agents/skills/version/SKILL.md"
     ".agents/skills/ingest/scripts/ingest_script.py"
     ".agents/skills/ingest/scripts/ingest_skills_dir.py"
     ".agents/skills/lint/scripts/fix_links.py"
     ".agents/skills/lint/scripts/lint_check.py"
+    "VERSION"
+    "CHANGELOG.md"
     "wiki/index.md"
     "wiki/log.md"
 )

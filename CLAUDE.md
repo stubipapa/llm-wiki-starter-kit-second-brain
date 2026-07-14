@@ -9,3 +9,4 @@
    - `/query` -> 調用 `.claude/skills/query/skill`
    - `/lint` -> 調用 `.claude/skills/lint/skill`
    - `/scaffold` -> 調用 `.claude/skills/scaffold/skill`
+   - `/version` -> 調用 `.claude/skills/version/skill`
