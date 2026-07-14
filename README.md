@@ -1,6 +1,7 @@
-# 🧠 LLM Wiki Starter Kit - Second Brain (v2.2)
+# 🧠 LLM Wiki Starter Kit - Second Brain (v2.3)
 
-> **最新版本**: v2.2 (第二大腦升級版 — 導入防呆與正規化檢索)
+> **最新版本**: v2.3 (雙軌相容升級版 — 同步技能與清理架構)
+> **v2.3 更新**: 雙軌架構對齊：同步了 Claude Code 與 Antigravity 的 Skills，清除根目錄散落的 Python 腳本並收納至 `scripts/` 中，全面優化索引與範本格式為嚴格的雙鏈 (`[[ ]]`) 格式。
 > **v2.2 更新**: 升級 `/ingest` 技能，加入嚴格的防呆與正規化比對機制，攝取時自動對齊現有實體與概念，徹底解決大小寫與縮寫不一致產生的死鏈問題。
 > **v2.1 更新**: 升級 `/scaffold` 安裝精靈，支援一鍵無痛部署（免互動確認），並補齊 Claude Code 路由與結構圖。
 >
@@ -107,13 +108,21 @@ My-Vault/                          ← Vault 根目錄
 ├── .agyrules                      ← Antigravity 入口（自動讀取）
 ├── WIKI_SCHEMA.md                 ← 核心規範（被上面兩個引用）
 ├── .claude/skills/                ← Claude Code 的 Skills
-│   ├── ingest/skill.md
-│   ├── lint/skill.md
+│   ├── ingest/
+│   │   ├── skill.md
+│   │   └── scripts/
+│   ├── lint/
+│   │   ├── skill.md
+│   │   └── scripts/
 │   ├── query/skill.md
 │   └── scaffold/skill.md
 ├── .agents/skills/                ← Antigravity 的 Skills
-│   ├── ingest/SKILL.md
-│   ├── lint/SKILL.md
+│   ├── ingest/
+│   │   ├── SKILL.md
+│   │   └── scripts/
+│   ├── lint/
+│   │   ├── SKILL.md
+│   │   └── scripts/
 │   ├── query/SKILL.md
 │   └── scaffold/SKILL.md
 ├── raw/                           ← 原始素材收件箱（唯讀）
