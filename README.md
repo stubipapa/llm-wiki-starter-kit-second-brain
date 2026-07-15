@@ -1,9 +1,12 @@
-# 🧠 LLM Wiki Starter Kit - Second Brain (v2.4.1)
+# 🧠 LLM Wiki Starter Kit - Second Brain (v2.4.2)
 
-> **最新版本**: v2.4.1 (自動升級版 — 新增 `/version` 技能與安裝腳本 Bug 修復)
+> **最新版本**: v2.4.2 (修復版 — 增強 lint 檢索相容性)
+> **v2.4.2 更新**: 修復 `/lint` 技能，升級索引一致性檢查，使其能同時正確辨識 `[[雙鏈]]` 與 `反引號` 兩種 index.md 註冊格式，避免產生未同步的誤報。
 > **v2.4.1 更新**: 修復 `scaffold.sh` 安裝精靈在目標目錄已存在時會崩潰的 Bug。
 > **v2.4 更新**: 新增 `/version` 技能，支援一鍵版本檢查與架構自動升級；新增 `VERSION` 版本標記檔與 `CHANGELOG.md` 獨立變更日誌。詳見 [CHANGELOG.md](CHANGELOG.md)。
 > **v2.3 更新**: 雙軌架構對齊、Python 腳本收納至 `scripts/`、全域雙鏈格式優化。
+> **v2.2 更新**: 升級 `/ingest` 技能，加入嚴格的防呆與正規化比對機制，攝取時自動對齊現有實體與概念，徹底解決大小寫與縮寫不一致產生的死鏈問題。
+> **v2.1 更新**: 升級 `/scaffold` 安裝精靈，支援一鍵無痛部署（免互動確認），並補齊 Claude Code 路由與結構圖。
 >
 > 一鍵初始化符合 [Karpathy LLM Wiki 規範](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 的 Obsidian 知識庫，內建 AI Agent 自動化工作流（Claude Code / Antigravity / 通用 Agent）。
 
